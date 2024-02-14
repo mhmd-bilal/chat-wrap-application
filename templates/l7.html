@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ChatWrap</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style-love.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
+    <script>
+        setTimeout(() => {
+            createConfetti();
+        }, 4000);
+
+    </script>
+</head>
+
+<body class="l1">
+    <div class="content">
+
+        <div class="top row fade-in-first floater" style="margin-top: 0px;text-align: center;">
+            <img class="logo" src="/images/logo-pink.png" />
+        </div>
+        <div class="middle row fade-in-second" style="text-align: center;">
+            <span style="font-size: 20px;">the texting crown goes to </span><br>
+            <span style="font-size: 30px;">🥁🥁🥁</span><br><br>
+            <span  class="fade-in-third" style="font-size: 40px;font-family: shrikhand;">SASMITHA</span><br>
+            <img src="/images/love.gif" style="width: 100%;">
+        </div>
+            <div class="bottom row fade-in-second" style="align-items:end;margin-top: 40px;">
+                <div class="time-bar"></div>
+            </div>
+        </div>
+        <script>
+            function createConfetti() {
+                const colors = ['#FFD700', '#FF4500', '#FF6347', '#00CED1', '#8A2BE2'];
+                confetti({
+                    particleCount: 1000,
+                    spread: 9999999,
+                    origin: { y: 0.3 },
+                    colors: colors,
+                });
+            }
+        </script>
+</body>
+
+</html>

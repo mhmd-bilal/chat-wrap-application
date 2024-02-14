@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ChatWrap</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="content">
+        <br />
+        <img class="logo" style="height: 10vh;margin-top: 40px;"
+            src="{{ url_for('static', filename='images/logo-blue.png') }}" alt="Logo">
+        <div class="box" style="margin-top: -50px;">
+            <form action="/confirm" method="post">
+                <div class="group">
+                    <label>Who is this for?</label>
+                </div>
+            
+                <div class="group">
+                    <div class="radiobutton">
+                        <input type="radio" id="a25" name="check-substitution-2" value="Partner" required />
+                        <label class="btn btn-default" for="a25">Partner</label>
+                    </div>
+                    <div class="radiobutton">
+                        <input type="radio" id="a50" name="check-substitution-2" value="Friend" required />
+                        <label class="btn btn-default" for="a50">Friend</label>
+                    </div>
+                </div><hr style="border: var(--s1) 1px solid;"><br><br>
+                <div class="group">
+                    <label for="selected_sender_name">Enter the name for {{ file_usernames[0] }}:</label>
+                    <input type="text" id="sender_name" name="sender_name" required>
+                    <br>
+                    <label for="selected_recipient_name">Enter the name for {{ file_usernames[1] }}:</label>
+                    <input type="text" id="recipient_name" name="recipient_name" required>
+            
+                    <!-- Hidden input fields to store selected recipient and sender names -->
+                    <input type="hidden" name="selected_sender_name" id="selected_sender_name" value="{{ file_usernames[0] }}">
+                    <input type="hidden" name="selected_recipient_name" id="selected_recipient_name" value="{{ file_usernames[1] }}">
+                    <input type="hidden" name="slideshow_ID" value="{{ slideshow_ID }}">
+               </div>
+                <div class="group">
+                    <button class="button buttonBlue" type="submit">Wrap it up!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script>
+    document.getElementById('selected_sender_name').value = selectedSenderName;
+    document.getElementById('selected_recipient_name').value = selectedRecipientName;
+
+    function validateForm() {
+    var radios = document.getElementsByName('check-substitution-2');
+    var formValid = false;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            formValid = true;
+            break;
+        }
+    }
+    if (!formValid) {
+        alert("Please select a theme type.");
+    }
+    return formValid;
+}
+
+</script>
+</body>
+
+</html>

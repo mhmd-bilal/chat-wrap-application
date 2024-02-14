@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ChatWrap</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style-love.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+</head>
+
+<body class="l1">
+  <div id="loader" class="center">
+    <div class="content">
+      <img class="logo" src="{{ url_for('static', filename='images/logo-pink.png') }}">
+      <br><br><br>
+      <img class="loading" src="{{ url_for('static', filename='images/loader.gif') }}">
+    </div>
+  </div>
+  <div class="content">
+    <div class="top row fade-in-first heart">
+      <img src="{{ url_for('static', filename='images/heart.png') }}" style="height: 8vh;">
+    </div>
+    <div class="middle row fade-in-second">
+      <div class="item" style="margin-top: -20px;animation: floater 3s ease-in-out infinite;">
+        <span class="text1">{{ sender_name }} has sent </span><br>
+        <span class="numbertext">
+          {{ total_message_count_sender }}<span class="numbertext" style="font-size: small">
+            words</span>
+        </span>
+      </div>
+      <div class="item" style="animation: floater 3s ease-in-out infinite;">
+        <span class="text1">{{ receiver_name }} has sent </span><br>
+        <span class="numbertext">
+          {{ total_message_count_recipient }}<span class="numbertext" style="font-size: small">
+            words</span>
+        </span>
+      </div>
+      <div class="item box" style="margin-top: 20px;animation: floater 2.5s ease-in-out infinite;">
+        <h1 class="heading">Fun Fact</h1>
+        <span class="text1">The Average wpm in texting is 41 wpm, hence both of you have spent around, <span
+            class="numbertext">{{ (total_message_count_sender + total_message_count_recipient) // 41 }}</span> hours of texting each other.</span>
+      </div>
+    </div>
+    <div class="bottom row fade-in-third">
+      <marquee>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+        <img class="logo scroll" src="{{ url_for('static', filename='images/logo-pink.png') }}"/>
+      </marquee>
+      <div class="time-bar"></div>
+    </div>
+  </div>
+  <script>
+    
+  </script>
+</body>
+
+</html>

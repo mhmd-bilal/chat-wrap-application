@@ -1,0 +1,261 @@
+:root {
+    --p1: #252F9C;
+    --s1: #CFE5FF;
+    --p2: #D82163;
+    --s2: #FFCEDF;
+}
+
+@font-face {
+    font-family: "Vampiroone";
+    src: url("/fonts/vampiroone-regular-webfont.eot");
+    src: url("/fonts/vampiroone-regular-webfont.woff") format("woff"),
+        url("/fonts/vampiroone-regular-webfont.otf") format("opentype"),
+        url("/fonts/vampiroone-regular-webfont.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("/fonts/metropolis-light-webfont.eot");
+    src: url("/fonts/metropolis-light-webfont.woff") format("woff"),
+        url("/fonts/metropolis-light-webfont.otf") format("opentype"),
+        url("/fonts/metropolis-light-webfont.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: "Shrikhand";
+    src: url("/fonts/shrikhand-regular-webfont.eot");
+    src: url("/fonts/shrikhand-regular-webfont.woff") format("woff"),
+        url("/fonts/shrikhand-regular-webfont.otf") format("opentype"),
+        url("/fonts/shrikhand-regular-demo.svg#filename") format("svg");
+}
+
+body {
+    font-family: 'Metropolis';
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: var(--s1);
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 60ch;
+    height: 85vh;
+    /* Height relative to viewport height */
+    margin: 20px;
+    border-radius: 33px;
+    width: calc(85vh * 9 / 16);
+    /* Relative width based on height */
+}
+
+.logo {
+    height: 20vh;
+}
+
+.loading {
+    height: 15vh;
+}
+
+form {
+    width: calc(25vh);
+    margin: 4em auto;
+    padding: 2em 2em 1em 2em;
+    background: var(--s1);
+    border-radius: 25px;
+    text-align: center;
+    /* Align text to center */
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+    /* Align text to center */
+}
+
+input {
+    font-size: 18px;
+    text-align: center;
+    /* Align text to center */
+    padding: 10px 10px 10px 5px;
+    display: block;
+    background: var(--s1);
+    color: var(--p1);
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--p1);
+    outline: none;
+}
+
+/* Label */
+
+label {
+    color: var(--p1);
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    /* Align text to center */
+    position: relative;
+    pointer-events: none;
+    left: 5px;
+    transition: all 0.2s ease;
+}
+
+
+/* Underline */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 110%;
+    height: 2px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--p1);
+    transition: all 0.2s ease;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+
+/* active */
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+
+/* Button */
+.button {
+    position: relative;
+    margin: 0em 0 1em 0;
+    width: 100%;
+    vertical-align: middle;
+    color: var(--p1);
+    padding: 12px 24px;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid;
+    letter-spacing: 1px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+.button img {
+    display: flex;
+    height: 2vh;
+    margin-left: 10px;
+}    
+
+.button:hover img {
+    filter: brightness(100);
+}
+
+.buttonBlue:hover {
+    background: var(--p1);
+    color: white;
+}    
+
+.buttonPink {
+    color: var(--p2);
+}    
+
+.buttonPink:hover {
+    background: var(--p2);
+    color: white;
+}    
+
+.radiobutton {
+    float:inline-start;
+    margin: 0 5px 0 0;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    color: var(--p1);
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid;
+    letter-spacing: 1px;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;  
+    position: relative;
+    margin: 0em 0 1em 0;
+    width: 100%;
+}
+  
+  .radiobutton label,
+  .radiobutton input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .radiobutton input[type="radio"] {
+    opacity: 0.011;
+    z-index: 100;
+  }
+  
+.radiobutton input[type="radio"]:nth-child(2n+1):checked + label {
+    background: var(--p1); /* Change to the desired color */
+    color: white;
+}
+
+
+
+  .radiobutton label {
+    cursor:pointer;
+    z-index: 90;
+    line-height: 1.8em;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+  }

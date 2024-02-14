@@ -1,0 +1,617 @@
+:root {
+    --p1: #252F9C;
+    --s1: #CFE5FF;
+    --p2: #D82163;
+    --s2: #FFCEDF;
+    --t2: #8E1C45;
+    --white: white;
+}
+
+@font-face {
+    font-family: "Vampiroone";
+    src: url("/fonts/vampiroone-regular-webfont.eot");
+    src: url("/fonts/vampiroone-regular-webfont.woff") format("woff"),
+        url("/fonts/vampiroone-regular-webfont.otf") format("opentype"),
+        url("/fonts/vampiroone-regular-webfont.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("/fonts/metropolis-light-webfont.eot");
+    src: url("/fonts/metropolis-light-webfont.woff") format("woff"),
+        url("/fonts/metropolis-light-webfont.otf") format("opentype"),
+        url("/fonts/metropolis-light-webfont.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: "Shrikhand";
+    src: url("/fonts/shrikhand-regular-webfont.eot");
+    src: url("/fonts/shrikhand-regular-webfont.woff") format("woff"),
+        url("/fonts/shrikhand-regular-webfont.otf") format("opentype"),
+        url("/fonts/shrikhand-regular-demo.svg#filename") format("svg");
+}
+
+@font-face {
+    font-family: Reydex;
+    src: url("/fonts/Reydex.otf") format("opentype");
+}
+
+body {
+    font-family: 'Metropolis';
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: var(--p2);
+    color: var(--p2);
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 60ch;
+    height: 85vh;
+    /* Height relative to viewport height */
+    margin: 20px;
+    border-radius: 33px;
+    width: calc(85vh * 9 / 16);
+    /* Relative width based on height */
+    padding: 40px;
+}
+
+.item {
+    padding: 0px 0px 10px 0;
+}
+
+.slideleft {
+    animation: leftslide 2s ease-out 1s forwards;
+    transform: translateX(-2000px)
+}
+
+.slideright {
+    animation: rightslide 2s ease-out 3s forwards;
+    transform: translateX(2000px)
+}
+
+.slideup {
+    animation: upslide 1s ease-out 0s forwards;
+    transform: translateY(50px)
+}
+
+.slidedown {
+    animation: downslide 1s ease-out 0s forwards;
+    transform: translateY(50px)
+}
+
+.box {
+    background-color: var(--s2);
+    padding: 1px 20px 30px 20px;
+    border-radius: 25px;
+}
+
+.box .text1 {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.box .numbertext {
+    font-size: 15px;
+}
+
+.heading {
+    font-family: Reydex;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.text1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.numbertext {
+    font-family: Inconsolata, monospace;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo {
+    height: 10vh;
+}
+
+.row {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.top {
+    height: 20%;
+    display: block;
+}
+
+.middle {
+    height: 60%;
+}
+
+.bottom {
+    height: 20%;
+    align-items: flex-end;
+    margin-top: -30px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 1rem));
+    }
+}
+
+.scroll {
+    animation: scroll 5s linear infinite;
+}
+
+
+.heart img {
+    height: 8vh;
+    animation: floater 2s ease-in-out infinite;
+}
+
+.floater {
+    animation: floater 2s ease-in-out infinite;
+}
+
+@keyframes rotateHeart {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floater {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes leftslide {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rightslide {
+    0% {
+        transform: translateX(3000px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes upslide {
+    0% {
+        transform: translateY(500px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes downslide {
+    0% {
+        transform: translateY(-500px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.fade-in-first {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.fade-in-second {
+    animation: fadeIn 4s ease-in-out;
+}
+
+.fade-in-third {
+    animation: fadeIn 6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.time-bar {
+    height: 10px;
+    width: 100%;
+    animation: fillin 12s ease-in-out;
+    background-color: var(--p2);
+}
+
+@keyframes fillin {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+.donut-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    border-radius: 100%
+}
+
+.portion-block {
+    border-radius: 50%;
+    clip: rect(0px, 200px, 200px, 100px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.circle {
+    border-radius: 50%;
+    clip: rect(0px, 100px, 200px, 0px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+
+p.center {
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    color: var(--p2);
+    font-family: Shrikhand;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    border-radius: 50%;
+    line-height: 35px;
+}
+
+#part1 {
+    transform: rotate(0deg);
+}
+
+#part1 .circle {
+    background-color: var(--s2);
+    /*transform: rotate(76deg);*/
+    animation: first 1s 1 forwards;
+}
+
+
+#part2 {
+    transform: rotate(100deg);
+}
+
+#part2 .circle {
+    background-color: var(--p2);
+    animation: second 1s 1 forwards 1s;
+}
+
+#part3 {
+    transform: rotate(250deg);
+}
+
+#part3 .circle {
+    background-color: var(--t2);
+    animation: third 0.5s 1 forwards 2s;
+}
+
+
+/* Animation */
+@keyframes first {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(100deg);
+    }
+}
+
+@keyframes second {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(150deg);
+    }
+}
+
+@keyframes third {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(111deg);
+    }
+}
+
+ul {
+    list-style-type: none;
+    font-family: Shrikhand;
+    font-size: 25px;
+}
+.pink{
+    color: var(--p2);
+}
+
+.pink li:nth-child(1){
+    filter: none;
+}
+.pink li:nth-child(2){
+    filter: none;
+}
+.pink li:nth-child(3){
+    filter: none;
+}
+.pink li:nth-child(4){
+    filter: none;
+}
+.pink li:nth-child(5){
+    filter: none;
+}
+
+ul li:nth-child(1) {
+    background-image: url('/images/1.png');
+    background-size: 25px 25px; 
+    background-repeat: no-repeat; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+    filter: brightness(100);
+}
+
+ul li:nth-child(2) {
+    background-image: url('/images/2.png');
+    background-size: 25px 25px; 
+    background-repeat: no-repeat; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+    filter: brightness(100);
+
+}
+
+ul li:nth-child(3) {
+    background-image: url('/images/3.png');
+    background-size: 25px 25px; 
+    background-repeat: no-repeat; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+    filter: brightness(100);
+}
+
+ul li:nth-child(4) {
+    background-image: url('/images/4.png');
+    background-size: 25px 25px; 
+    background-repeat: no-repeat; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+    filter: brightness(100);
+}
+
+ul li:nth-child(5) {
+    background-image: url('/images/5.png');
+    background-size: 25px 25px; 
+    background-repeat: no-repeat; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+    filter: brightness(100);
+}
+
+.bar-graph .year {
+    animation: fade-in-text 2.2s 0.1s forwards;
+    -moz-animation: fade-in-text 2.2s 0.1s forwards;
+    animation: fade-in-text 2.2s 0.1s forwards;
+    opacity: 0;
+  }
+  
+  .bar-graph-horizontal {
+    max-width: 380px;
+  }
+  
+  .bar-graph-horizontal > div {
+    float: left;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+  
+  .bar-graph-horizontal .year {
+    float: left;
+    margin-top: 18px;
+    width: 50px;
+  }
+  
+  .bar-graph-horizontal .bar {
+    border-radius: 10px;
+    height: 55px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 0;
+    background-color: var(--white);
+  }
+  
+
+  .bar-graph-one .bar::after {
+    -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+    -moz-animation: fade-in-text 2.2s 0.1s forwards;
+    animation: fade-in-text 2.2s 0.1s forwards;
+    color: #fff;
+    content: attr(data-percentage);
+    font-weight: 700;
+    position: absolute;
+    right: 16px;    
+    top: 17px;
+  }
+  
+  .bar-graph-one .bar-one .bar {
+    -webkit-animation: show-bar-one 1.2s 0.1s forwards;
+    -moz-animation: show-bar-one 1.2s 0.1s forwards;
+    animation: show-bar-one 1.2s 0.1s forwards;
+  }
+  
+  .bar-graph-one .bar-two .bar {
+    -webkit-animation: show-bar-two 1.2s 0.2s forwards;
+    -moz-animation: show-bar-two 1.2s 0.2s forwards;
+    animation: show-bar-two 1.2s 0.2s forwards;
+  }
+  
+  .bar-graph-one .bar-three .bar {
+    -webkit-animation: show-bar-three 1.2s 0.3s forwards;
+    -moz-animation: show-bar-three 1.2s 0.3s forwards;
+    animation: show-bar-three 1.2s 0.3s forwards;
+  }
+  
+  .bar-graph-one .bar-four .bar {
+    -webkit-animation: show-bar-four 1.2s 0.4s forwards;
+    -moz-animation: show-bar-four 1.2s 0.4s forwards;
+    animation: show-bar-four 1.2s 0.4s forwards;
+  }
+
+  .bar-graph-one .bar-five .bar {
+    -webkit-animation: show-bar-four 1.2s 0.4s forwards;
+    -moz-animation: show-bar-four 1.2s 0.4s forwards;
+    animation: show-bar-four 1.2s 0.4s forwards;
+  }
+
+  .bar-graph-one .bar-six .bar {
+    -webkit-animation: show-bar-four 1.2s 0.4s forwards;
+    -moz-animation: show-bar-four 1.2s 0.4s forwards;
+    animation: show-bar-four 1.2s 0.4s forwards;
+  }
+
+  .bar-graph-one .bar-seven .bar {
+    -webkit-animation: show-bar-four 1.2s 0.4s forwards;
+    -moz-animation: show-bar-four 1.2s 0.4s forwards;
+    animation: show-bar-four 1.2s 0.4s forwards;
+  }
+  
+/* Bar Graph Horizontal Animations */
+@keyframes show-bar-one {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 69.6%;
+    }
+  }
+  
+  @keyframes show-bar-two {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 71%;
+    }
+  }
+  
+  @keyframes show-bar-three {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 74.7%;
+    }
+  }
+  
+  @keyframes show-bar-four {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 76.8%;
+    }
+  }
+  
+  @keyframes show-bar-five {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 76.8%;
+    }
+  }
+  
+  @keyframes show-bar-six {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 76.8%;
+    }
+  }
+  
+  @keyframes show-bar-seven {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 76.8%;
+    }
+  }
+  
+  @keyframes fade-in-text {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

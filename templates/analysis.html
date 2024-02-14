@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+    <h2>Sender: {{ selected_sender_name }}</h2>
+    <p>Total Messages: {{ total_message_count_sender }}</p>
+    <p>Longest Message: {{ longest_message_sender }}</p>
+    <p>Sentiment Analysis:</p>
+    <ul>
+        <li>Positive: {{ sentiment_sender[0] }}%</li>
+        <li>Negative: {{ sentiment_sender[1] }}%</li>
+        <li>Neutral: {{ sentiment_sender[2] }}%</li>
+    </ul>
+    <p>Most Common Words:</p>
+    <ul>
+        {% for word, count in common_words_sender %}
+        <li>{{ word }}: {{ count }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Recipient: {{ selected_recipient_name }}</h2>
+    <p>Total Messages: {{ total_message_count_recipient }}</p>
+    <p>Longest Message: {{ longest_message_recipient }}</p>
+    <p>Sentiment Analysis:</p>
+    <ul>
+        <li>Positive: {{ sentiment_recipient[0] }}%</li>
+        <li>Negative: {{ sentiment_recipient[1] }}%</li>
+        <li>Neutral: {{ sentiment_recipient[2] }}%</li>
+    </ul>
+    <p>Most Common Words:</p>
+    <ul>
+        {% for word, count in common_words_recipient %}
+        <li>{{ word }}: {{ count }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for day, count in messages_per_day_count | dictsort %}
+        <li>Day {{ day }}: {{ count }} messages</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

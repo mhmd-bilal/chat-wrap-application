@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Result</title>
+</head>
+<body>
+    <h1>File Uploaded Successfully</h1>
+    <form action="/confirmnames" method="post">
+        <label for="selected_sender_name">Select Sender's Name:</label>
+        <select id="selected_sender_name" name="selected_sender_name">
+            {% for username in file_usernames %}
+            <option value="{{ username }}">{{ username }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="selected_recipient_name">Select Recipient's Name:</label>
+        <select id="selected_recipient_name" name="selected_recipient_name">
+            {% for username in file_usernames %}
+            <option value="{{ username }}">{{ username }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="hidden" name="sender_name" value="{{ sender_name }}">
+        <input type="hidden" name="recipient_name" value="{{ recipient_name }}">
+        <button type="submit">Confirm Names</button>
+    </form>
+
+    <script>
+        document.getElementById('selected_sender_name').addEventListener('change', function() {
+            var senderName = this.value;
+            var recipientNameSelect = document.getElementById('selected_recipient_name');
+            var recipientNameOptions = recipientNameSelect.options;
+
+            // Disable the option with the same value as the selected sender name
+            for (var i = 0; i < recipientNameOptions.length; i++) {
+                var option = recipientNameOptions[i];
+                if (option.value === senderName) {
+                    option.disabled = true;
+                } else {
+                    option.disabled = false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
